@@ -1,0 +1,9 @@
+{
+  "name": "careerpilot-test-db",
+  "private": true,
+  "description": "PGlite (real PostgreSQL compiled to WebAssembly) for database tests without Docker or a cloud project.",
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.14",
+    "@electric-sql/pglite-socket": "0.2.17"
+  }
+}
