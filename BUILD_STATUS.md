@@ -11,7 +11,7 @@ Legend: ✅ verified (tested, evidence below) · 🟡 built, **not yet verified*
 | --- | --- | --- |
 | 0 | Audit, project structure, tooling, apps start | ✅ done |
 | 1 | Database, authentication, backend foundation | 🟡 built and verified on the real Supabase project; **only a token really issued by Supabase Auth is still unchecked** |
-| 2 | Frontend foundation and dashboard | ⬜ not started (only the bare Next.js scaffold exists); waits for your approval |
+| 2 | Frontend foundation and dashboard | 🟡 built: auth pages, route protection, app shell, nine pages, real summary endpoint. Lint, types, 24 frontend unit tests, build and backend tests pass. **Real sign-in, redirects and responsiveness not yet tested**: needs `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` in `frontend/.env.local` (docs/SUPABASE_SETUP.md, section 6) |
 | 3+ | Product modules, Gmail, AI, extension | ⬜ not scheduled |
 
 ## What you need to do next
