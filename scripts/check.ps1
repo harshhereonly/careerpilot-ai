@@ -41,6 +41,7 @@ if (-not $SkipFrontend) {
         Invoke-Step "frontend: eslint" { npm run lint --silent }
         Invoke-Step "frontend: prettier --check" { npm run format:check --silent }
         Invoke-Step "frontend: tsc --noEmit" { npm run typecheck --silent }
+        Invoke-Step "frontend: vitest" { npm test --silent }
     } finally { Pop-Location }
 }
 

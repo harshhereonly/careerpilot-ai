@@ -73,6 +73,19 @@ roles and `auth.uid()`, and whether our per-request security context works on yo
 Say "Supabase ready". I will then apply the migrations (`--migrate`), run the database tests against
 your project and report exactly what passed.
 
+## 6. Frontend and sign-in settings (Phase 2)
+
+1. **Publishable key:** Project Settings -> API Keys -> copy the publishable key (`sb_publishable_...`)
+   into `frontend/.env.local` as `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`. It is public by design (it ships to
+   every browser), so it is fine to share. Never use the secret key (`sb_secret_...`) here.
+2. **Where email links go:** Authentication -> URL Configuration. Set the Site URL to `http://localhost:3000`
+   and add `http://localhost:3000/auth/callback` to the Redirect URLs. Without this, confirmation and
+   password-reset links point at the wrong place. Add your production URL here when you deploy.
+3. **Password rules:** Authentication -> Providers -> Email. Keep "Confirm email" on, and set the minimum
+   password length to 8 to match the app's own check.
+
+Restart `npm --prefix frontend run dev` after editing `.env.local`.
+
 ## What I will and will not do with your project
 
 - Apply the Alembic migrations: 23 tables, RLS policies, grants, triggers, in the `public` schema.
